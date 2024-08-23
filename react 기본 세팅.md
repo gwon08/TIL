@@ -11,3 +11,4 @@ npx create-react-app .
 # html 자동완성
 
 F1 누름 → Open workspace Settings(JSON) 선택 → 괄호 안에 “emmet.includeLanguages”: { “javascript”: “javascriptreact” }, 치고 저장
+
