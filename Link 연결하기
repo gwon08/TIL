@@ -1,0 +1,75 @@
+# Routing이란?
+
+> 경로를 찾는행위.
+> 
+
+*웹 프론트에서 라우팅은 url주소에 따라 다른 화면을 보여주는 것을 의미 한다
+
+# SPA란?
+
+> html이 하나인 웹 애플리케이션.
+> 
+
+> 반대로 html이 여러개인 MPA가 있다
+> 
+
+*MPA는 html 파일이 여러 개라 다른 페이지를 보여주고 싶을 때, 해당html 파일을 연결해 보여주는 형태로 페이지 이동하는 기능을 구현할 수 있으나 SPA는 html 파일이 하나이기 때문에 경로에 따라서 다른 UI를 보여주는 라우팅 기능이 필요함.
+
+# React Router
+
+## 설치 방법
+
+react-router-dom 설치: npm install react-router-dom
+
+설치가 완료 되면 라우팅을 구현할 수 있다.
+
+### 1. Router.js파일을 src폴더 안 index.js와 같은 위치에 생성하고 App.js, Ap.css파일은 제거한
+
+### 2. BrowserRouter, Routes, Route 컴포넌트를 import하고 3개의 컴포넌트를 이용해서 컴포넌트를 구현한다.
+
+1. BrowserRouter컴포넌트로 전체를 감싸준다.
+2. BrowserRouter컴포넌트의 자식 요소로 Routes컴포넌트 넣기
+3. Routes 컴포넌트의 자식 요소로 Route 컴포넌트 넣기
+- `BrowserRouter` 컴포넌트 : 주소 변경에 대해 다양한 편의 기능을 제공해줍니다. (ex. 페이지가 새로고침 되지 않아도 주소 변경이 가능한 기능)
+- `Routes` 컴포넌트 : 여러 Route를 감싸 그 중 규칙이 일치하는 라우트 단 하나만을 렌더링 시켜줍니다.
+- `Route` 컴포넌트 : 규칙을 설정할 수 있습니다. path에 경로를 설정하고 element는 path 속성에서 설정한 경로로 이동할 때, 어떤 컴포넌트를 보여줄지 결정하는 속성입니다.
+
+```jsx
+// Router.js
+
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+const Router = () => {
+	return (
+		<BrowserRouter>                                    // 1
+      <Routes>                                             // 2
+        <Route path='/' element={<Components />} />        // 3
+      </Routes>
+    </BrowserRouter>
+	);
+};
+
+export default Router;
+```
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/9f8d7306-40fc-4c14-96d4-131cd4a361d0/e078b0a3-2342-48a3-b5bf-5ab511e7ba00/image.png)
+
+만약 `nav`, `footer`처럼 경로와 상관없이 모든 화면에 표시되어야 하는 컴포넌트가 있다면 `Routes` 밖에 위치시켜 준다.
+
+# Link 컴포넌트
+
+react-router-dom 으로부터 Link 컴포넌트를 import해서 JSX내부 원하는 곳에 사용할 수 있다.
+
+```jsx
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Login = () => {
+  return <Link to='/signup'>회원가입</Link>;
+};
+
+export default Login;
+```
+
+회원가입을 클릭하면 `/signup`이라는 경로로 이동하게 되고, Route 컴포넌트의 path 값 중 일치하는 경로를 찾아 해당 컴포넌트를 화면에 그려줍니다.
