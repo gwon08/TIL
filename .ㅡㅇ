@@ -1,0 +1,17 @@
+# 컴포넌트 (1)
+
+# 컴포넌트의 사전적 의미
+
+전체의 부분이라는 뜻.
+
+# 프론트엔드의 컴포넌트란?
+
+element(요소) group을 반환하는 JS함수라고 할 수 있다.
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/9f8d7306-40fc-4c14-96d4-131cd4a361d0/1775f8cf-7aa2-482e-a8bb-89589945d51f/image.png)
+
+현재의 앱은 하나하나의 element로 구성되어 있다. 
+
+이는 페이지 전체를 바꾸지 않고, 부분적으로 수정할 수 있으며 재사용이 용이하다.
+
+비행기의 부품들이 element라면 component(컴포넌트)는 element 들을 합친 결과이다.
